@@ -6,10 +6,14 @@ namespace DotNet_Login_Reg.Controllers;
 
 public class HomeController : Controller
 {
+
+    private AppDbContext _context;
+
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(AppDbContext context, ILogger<HomeController> logger)
     {
+        _context = context;
         _logger = logger;
     }
 
