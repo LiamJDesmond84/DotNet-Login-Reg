@@ -1,9 +1,17 @@
+using DotNet_Login_Reg.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("ConnectionString");
+builder.Services.AddDbContext<AppContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+//builder.Services.AddDbContext<MyContext>(options => options.UseMySql("DBInfo:ConnectionString", ServerVersion.AutoDetect("DBInfo:ConnectionString")));
+builder.Services.AddMvc(options => options.EnableEndpointRouting = false);
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
