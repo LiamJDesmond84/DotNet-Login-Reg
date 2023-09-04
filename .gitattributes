@@ -1,0 +1,5 @@
+.gitattributes
+
+*.html linguist-vendored
+*.cshtml linguist-vendored
+*.css linguist-vendored
