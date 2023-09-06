@@ -50,10 +50,17 @@ public class HomeController : Controller
             // verify provided password against hash stored in db
             var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
 
-            // result can be compared to 0 for failure
+            // result can be compared to 0 for failure - Password?
             if (result == 0)
             {
                 // handle failure (this should be similar to how "existing email" is handled)
+                // Add an error to ModelState and return to View!
+                ModelState.AddModelError("Password", "Invalid Email/Password");
+                return View("SomeView");
+            }
+            else
+            {
+
             }
         }
     }
