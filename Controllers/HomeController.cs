@@ -22,14 +22,37 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+
+    [HttpPost("register")]
+    public IActionResult Register(User user)
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        // Check initial ModelState
+        if (ModelState.IsValid)
+        {
+            // If a User exists with provided email
+            if (dbContext.Users.Any(u => u.Email == user.Email))
+            {
+                // Manually add a ModelState error to the Email field, with provided
+                // error message
+                ModelState.AddModelError("Email", "Email already in use!");
+
+                // You may consider returning to the View at this point
+
+                return View();
+            }
+
+            else
+            {
+                // Initializing a PasswordHasher object, providing our User class as its type
+                PasswordHasher<User> Hasher = new PasswordHasher<User>();
+                user.Password = Hasher.HashPassword(user, user.Password);
+                //Save your user object to the database
+
+                return RedirectToAction("Index");
+            }
+            // other code
+        }
+
+
     }
-}
