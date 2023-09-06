@@ -51,6 +51,9 @@ public class HomeController : Controller
                 user.Password = Hasher.HashPassword(user, user.Password);
                 //Save your user object to the database
 
+                _context.Add(user);
+                _context.SaveChanges();
+
                 return RedirectToAction("Index");
             }
             // other code
@@ -60,5 +63,5 @@ public class HomeController : Controller
             return View(user);
         }
 
-
+    }
     }
