@@ -26,6 +26,39 @@ public class HomeController : Controller
 
 
 
+
+
+
+    [HttpPost("login")]
+    public IActionResult Login(LoginUser userSubmission)
+    {
+        if (ModelState.IsValid)
+        {
+            // If inital ModelState is valid, query for a user with provided email
+            var userInDb = _context.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
+            // If no user exists with provided email
+            if (userInDb == null)
+            {
+                // Add an error to ModelState and return to View!
+                ModelState.AddModelError("Email", "Invalid Email/Password");
+                return View("SomeView");
+            }
+
+            // Initialize hasher object
+            var hasher = new PasswordHasher<LoginUser>();
+
+            // verify provided password against hash stored in db
+            var result = hasher.VerifyHashedPassword(userSubmission, userInDb.Password, userSubmission.Password);
+
+            // result can be compared to 0 for failure
+            if (result == 0)
+            {
+                // handle failure (this should be similar to how "existing email" is handled)
+            }
+        }
+    }
+
+
     [HttpPost("register")]
     public IActionResult Register(User user)
     {
@@ -60,7 +93,7 @@ public class HomeController : Controller
         }
         else
         {
-            return View(("Register");
+            return View("Register");
         }
 
     }
