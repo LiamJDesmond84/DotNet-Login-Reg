@@ -1,6 +1,8 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DotNet_Login_Reg.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 namespace DotNet_Login_Reg.Controllers;
 
@@ -31,7 +33,7 @@ public class HomeController : Controller
         if (ModelState.IsValid)
         {
             // If a User exists with provided email
-            if (dbContext.Users.Any(u => u.Email == user.Email))
+            if (_context.Users.Any(u => u.Email == user.Email))
             {
                 // Manually add a ModelState error to the Email field, with provided
                 // error message
