@@ -60,6 +60,8 @@ public class HomeController : Controller
             }
             else
             {
+                User user = userInDb;
+                return View("Index");
 
             }
         }
