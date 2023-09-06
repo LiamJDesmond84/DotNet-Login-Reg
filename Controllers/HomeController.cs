@@ -41,7 +41,7 @@ public class HomeController : Controller
 
                 // You may consider returning to the View at this point
 
-                return View();
+                return View("Register");
             }
 
             else
@@ -60,7 +60,7 @@ public class HomeController : Controller
         }
         else
         {
-            return View(user);
+            return View(("Register");
         }
 
     }
