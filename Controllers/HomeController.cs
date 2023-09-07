@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using DotNet_Login_Reg.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Drawing;
 
 namespace DotNet_Login_Reg.Controllers;
 
@@ -100,7 +101,9 @@ public class HomeController : Controller
                 _context.Add(user);
                 _context.SaveChanges();
 
-                return RedirectToAction("Index");
+                HttpContext.Session.SetObjectAsJson("SessionUser", user);
+
+                return RedirectToAction("Index", user);
             }
             // other code
         }
