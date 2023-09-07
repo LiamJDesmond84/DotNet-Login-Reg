@@ -2,7 +2,7 @@
 
 namespace DotNet_Login_Reg.Models
 {
-    public class SessionExtensions
+    public static class SessionExtensions
     {
 
         // We can call ".SetObjectAsJson" just like our other session set methods, by passing a key and a value
