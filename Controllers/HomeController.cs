@@ -22,7 +22,19 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        if (HttpContext.Session.GetObjectFromJson<User>("SessionUser") == null)
+        {
+            Debug.WriteLine("NULL");
+
+
+            return View("Index");
+        }
+        else
+        {
+            User loginUser = HttpContext.Session.GetObjectFromJson<User>("SessionUser");
+            return View("Index", loginUser);
+        }
+        
     }
 
 
