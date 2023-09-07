@@ -61,7 +61,8 @@ public class HomeController : Controller
             }
             else
             {
-                User user = userInDb;
+                //User user = userInDb;
+                HttpContext.Session.SetObjectAsJson("SessionUser", userInDb);
                 return View("Index");
 
             }
