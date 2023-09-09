@@ -93,7 +93,7 @@ public class HomeController : Controller
         if (ModelState.IsValid)
         {
             // If inital ModelState is valid, query for a user with provided email
-            User? userInDb = _context.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
+            var userInDb = _context.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
             // If no user exists with provided email
             if (userInDb == null)
             {
@@ -118,9 +118,9 @@ public class HomeController : Controller
             }
             else
             {
-                //User user = userInDb;
-                HttpContext.Session.SetObjectAsJson("SessionUser", userInDb);
-                return View("Index", userInDb);
+                User user = userInDb;
+                HttpContext.Session.SetObjectAsJson("SessionUser", user);
+                return View("Index");
 
             }
         }
