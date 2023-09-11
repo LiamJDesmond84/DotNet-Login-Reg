@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<div>
+    <div style="display: flex; flex-direction: row; justify-content: center; color: green">
+    <h1></h1>
+        <p style="margin-right: 50px">Add a Dish</p>
+        <a asp-controller="Home" asp-action="Index">Home</a>
+    </div>
+    <a asp-controller="Home" asp-action="Index">Home</a>
+    <form asp-action="SubmitRecipe" asp-controller="Home" method="post">
+        <span asp-validation-for="Name"></span>
+        <label asp-for="Name">Dish Name</label>
+        <input asp-for="Name" type="text" />
+
+        <span asp-validation-for="Chef"></span>
+        <label asp-for="Chef">Chef</label>
+        <input asp-for="Chef" type="text" />
+
+        <span asp-validation-for="Tastiness"></span>
+        <label asp-for="Tastiness">Tastiness:</label>
+        <select asp-for="Tastiness">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <span asp-validation-for="Calories"></span>
+        <label asp-for="Calories">Calories</label>
+        <input asp-for="Calories" type="text" />
+
+        <label asp-for="Description">Description</label>
+        <textarea asp-for="Description" rows="10" cols="30"></textarea>
+        <button type="submit">Submit Recipe</button>
+    </form>
+</div>
