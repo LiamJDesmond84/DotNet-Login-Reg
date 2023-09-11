@@ -1,4 +1,6 @@
-﻿<div>
+﻿@model DotNet_Login_Reg.Models.User
+
+<div>
     <div style="display: flex; flex-direction: row; justify-content: center; color: green">
     <h1></h1>
         <p style="margin-right: 50px">Add a Dish</p>
@@ -6,7 +8,7 @@
     </div>
     <a asp-controller="Home" asp-action="Index">Home</a>
     <form asp-action="SubmitRecipe" asp-controller="Home" method="post">
-        <span asp-validation-for="Name"></span>
+        <span asp-validation-for="FirstN"></span>
         <label asp-for="Name">Dish Name</label>
         <input asp-for="Name" type="text" />
 
@@ -24,12 +26,13 @@
             <option value="5">5</option>
         </select>
 
-        <span asp-validation-for="Calories"></span>
-        <label asp-for="Calories">Calories</label>
-        <input asp-for="Calories" type="text" />
+        <span asp-validation-for="Email"></span>
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" type="text" />
 
-        <label asp-for="Description">Description</label>
-        <textarea asp-for="Description" rows="10" cols="30"></textarea>
+        <span asp-validation-for="Password"></span>
+        <label asp-for="Password">Password</label>
+        <input asp-for="Password" type="text" />
         <button type="submit">Submit Recipe</button>
     </form>
 </div>
