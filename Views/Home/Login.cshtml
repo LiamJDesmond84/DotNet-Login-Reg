@@ -1,4 +1,4 @@
-﻿@model DotNet_Login_Reg.Models.User
+﻿@model DotNet_Login_Reg.Models.LoginUser
 
 <div>
     <div style="display: flex; flex-direction: row; justify-content: center; color: green">
@@ -7,10 +7,10 @@
         <a asp-controller="Home" asp-action="Index">Home</a>
     </div>
     <a asp-controller="Home" asp-action="Index">Home</a>
-    <form asp-action="SubmitRecipe" asp-controller="Home" method="post">
-        <span asp-validation-for="Name"></span>
-        <label asp-for="Name">Dish Name</label>
-        <input asp-for="Name" type="text" />
+    <form asp-action="Login" asp-controller="Home" method="post">
+        <span asp-validation-for="Email"></span>
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" type="text" />
 
         <span asp-validation-for="Chef"></span>
         <label asp-for="Chef">Chef</label>
