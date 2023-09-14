@@ -22,6 +22,9 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+
+        Debug.WriteLine(HttpContext.Session.GetObjectFromJson<User>("SessionUser"));
+
         if (HttpContext.Session.GetObjectFromJson<User>("SessionUser") == null)
         {
             Debug.WriteLine("NULL");
