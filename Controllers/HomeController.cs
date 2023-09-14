@@ -59,7 +59,7 @@ public class HomeController : Controller
 
 
 
-
+    [HttpPost]
     public IActionResult Register(User user)
     {
         // Check initial ModelState
@@ -95,7 +95,7 @@ public class HomeController : Controller
 
                 Debug.WriteLine("NOOOOOOOOO USER MODEL");
 
-                Debug.WriteLine(HttpContext.Session.GetObjectFromJson("SessionUser"));
+
 
                 return RedirectToAction("Index", user);
             }
