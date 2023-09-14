@@ -39,9 +39,16 @@ public class HomeController : Controller
     }
 
 
+    [HttpGet]
     public IActionResult RegisterPage ()
     {
         return View ("Register");
+    }
+
+    [HttpGet]
+    public IActionResult LoginPage()
+    {
+        return View("Login");
     }
 
 
