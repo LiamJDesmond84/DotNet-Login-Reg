@@ -92,7 +92,7 @@ public class HomeController : Controller
         }
         else
         {
-            return View("Register");
+            return View("Index");
         }
 
     }
