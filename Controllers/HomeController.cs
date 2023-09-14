@@ -39,7 +39,10 @@ public class HomeController : Controller
     }
 
 
-
+    public IActionResult RegisterPage ()
+    {
+        return View ("Register");
+    }
 
 
 
