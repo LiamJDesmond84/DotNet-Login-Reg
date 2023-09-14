@@ -56,7 +56,7 @@ public class HomeController : Controller
 
 
 
-    [HttpPost("register")]
+
     public IActionResult Register(User user)
     {
         // Check initial ModelState
