@@ -67,7 +67,7 @@ public class HomeController : Controller
         if (ModelState.IsValid)
         {
             // If a User exists with provided email
-            if (_context.Users.Any(u => u.Email == user.Email))
+            if (_context.Users.Any(u => user.Email == u.Email))
             {
                 // Manually add a ModelState error to the Email field, with provided
                 // error message
