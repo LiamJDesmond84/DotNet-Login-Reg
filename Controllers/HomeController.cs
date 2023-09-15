@@ -67,8 +67,9 @@ public class HomeController : Controller
         // Check initial ModelState
         if (ModelState.IsValid)
         {
+            Debug.WriteLine("ITS VALID");
             // If a User exists with provided email
-            if (_context.Users.Any(u => user.Email == u.Email))
+            if (_context.Users.Any(u => u.Email == user.Email))
             {
                 // Manually add a ModelState error to the Email field, with provided
                 // error message
@@ -105,6 +106,9 @@ public class HomeController : Controller
         }
         else
         {
+            var errors = ModelState.Select(x => x.Value.Errors)
+                           .Where(y => y.Count > 0)
+                           .ToList();
             return View("Index");
         }
 
