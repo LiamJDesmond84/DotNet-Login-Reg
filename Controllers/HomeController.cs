@@ -63,6 +63,7 @@ public class HomeController : Controller
     public IActionResult Register(User user)
     {
         Debug.WriteLine("Register Method");
+        Debug.WriteLine(user.FirstName);
         // Check initial ModelState
         if (ModelState.IsValid)
         {
