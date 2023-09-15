@@ -62,6 +62,7 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult Register(User user)
     {
+        Debug.WriteLine("Register Method");
         // Check initial ModelState
         if (ModelState.IsValid)
         {
