@@ -138,6 +138,7 @@ public class HomeController : Controller
             if (result == 0)
             {
                 // handle failure (this should be similar to how "existing email" is handled)
+                Debug.WriteLine("INVALID EMAIL/PASSWORD");
                 // Add an error to ModelState and return to View!
                 ModelState.AddModelError("Password", "Invalid Email/Password");
                 return View("SomeView");
@@ -152,6 +153,7 @@ public class HomeController : Controller
         }
         else
         {
+            Debug.WriteLine("MODEL NOT VALID");
             return View();
         }
     }
