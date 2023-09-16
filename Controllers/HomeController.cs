@@ -35,8 +35,8 @@ public class HomeController : Controller
         else
         {
             Debug.WriteLine("NOT NULL");
-            User loginUser = HttpContext.Session.GetObjectFromJson<User>("SessionUser");
-            return View("Index", loginUser);
+            User user = HttpContext.Session.GetObjectFromJson<User>("SessionUser");
+            return View("Index", user);
         }
         
     }
@@ -147,7 +147,10 @@ public class HomeController : Controller
             {
                 User user = userInDb;
                 HttpContext.Session.SetObjectAsJson("SessionUser", user);
-                return View("Index");
+
+                User loggedInUser = HttpContext.Session.GetObjectFromJson<User>("SessionUser");
+
+                return View("Index", loggedInUser);
 
             }
         }
