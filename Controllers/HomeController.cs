@@ -112,7 +112,7 @@ public class HomeController : Controller
 
     }
 
-    [HttpPost("login")]
+
     public IActionResult Login(LoginUser userSubmission)
     {
         if (ModelState.IsValid)
@@ -161,5 +161,13 @@ public class HomeController : Controller
             Debug.WriteLine("MODEL NOT VALID");
             return View();
         }
+    }
+
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Clear();
+
+        return View("Index");
+
     }
 }
