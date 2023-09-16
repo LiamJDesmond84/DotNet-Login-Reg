@@ -150,6 +150,8 @@ public class HomeController : Controller
 
                 User loggedInUser = HttpContext.Session.GetObjectFromJson<User>("SessionUser");
 
+                Debug.WriteLine("USER LOGGED IN - SESSION SET");
+
                 return View("Index", loggedInUser);
 
             }
