@@ -118,7 +118,7 @@ public class HomeController : Controller
         if (ModelState.IsValid)
         {
             // If inital ModelState is valid, query for a user with provided email
-            var userInDb = _context.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
+            User? userInDb = _context.Users.FirstOrDefault(u => u.Email == userSubmission.Email);
             // If no user exists with provided email
             if (userInDb == null)
             {
