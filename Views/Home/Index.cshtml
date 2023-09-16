@@ -12,6 +12,9 @@
     @if (Model != null)
     {
         <p>Hello @Model.FirstName</p>
+
+        <a style="margin: auto" asp-action="Logout" asp-controller="Home"><button>Logout</button></a>
+
     }
     else
     {

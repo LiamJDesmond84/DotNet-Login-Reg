@@ -112,7 +112,7 @@ public class HomeController : Controller
 
     }
 
-
+    [HttpPost]
     public IActionResult Login(LoginUser userSubmission)
     {
         if (ModelState.IsValid)
