@@ -59,7 +59,7 @@ public class HomeController : Controller
 
 
 
-    //[HttpPost]
+
     public IActionResult Register(User user)
     {
         Debug.WriteLine("Register Method");
@@ -112,7 +112,7 @@ public class HomeController : Controller
 
     }
 
-    //[HttpPost]
+
     public IActionResult Login(LoginUser userSubmission)
     {
         if (ModelState.IsValid)
@@ -122,7 +122,7 @@ public class HomeController : Controller
             // If no user exists with provided email
             if (userInDb == null)
             {
-                Debug.WriteLine("WITH USER MODEL");
+
                 // Add an error to ModelState and return to View!
                 ModelState.AddModelError("Email", "Invalid Email/Password");
                 return View("SomeView");
@@ -138,7 +138,7 @@ public class HomeController : Controller
             if (result == 0)
             {
                 // handle failure (this should be similar to how "existing email" is handled)
-                Debug.WriteLine("INVALID EMAIL/PASSWORD");
+
                 // Add an error to ModelState and return to View!
                 ModelState.AddModelError("Password", "Invalid Email/Password");
                 return View("SomeView");
