@@ -92,13 +92,8 @@ public class HomeController : Controller
 
                 HttpContext.Session.SetObjectAsJson("SessionUser", user);
 
-                Debug.WriteLine("WITH USER MODEL");
 
                 Debug.WriteLine(HttpContext.Session.GetObjectFromJson<User>("SessionUser"));
-
-                Debug.WriteLine("NOOOOOOOOO USER MODEL");
-
-
 
                 return RedirectToAction("Index", user);
             }
