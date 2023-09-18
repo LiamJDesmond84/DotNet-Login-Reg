@@ -2,14 +2,15 @@
 
 <div class="text-center">
 
-        <div style="display: flex; flex-direction: column; justify-content: center; color: green">
-        <p>Recent Dishes</p>
-        <div style="display: flex; flex-direction: row; justify-content: center; color: green">
-        <a asp-controller="Home" asp-action="RegisterPage">Register</a>
-        <a asp-controller="Home" asp-action="LoginPage">Login</a>
+    <div style="display: flex; flex-direction: column; justify-content: center; color: green">
+    <p>Recent Dishes</p>
+        <div style="display: flex; flex-direction: row; justify-content: center;">
+        <a asp-controller="Home" asp-action="RegisterPage" style="margin-right: 5px">Register</a>
+            <a asp-controller="Home" asp-action="LoginPage" style="margin-left: 5px">Login</a>
+
         </div>
-        <hr />
     </div>
+    <hr />
 
     @if (Model != null)
     {
