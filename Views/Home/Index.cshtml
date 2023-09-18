@@ -1,11 +1,13 @@
 ﻿@model User
 
 <div class="text-center">
-    <div style="display: flex; flex-direction: row; justify-content: center; color: green">
 
+        <div style="display: flex; flex-direction: column; justify-content: center; color: green">
         <p style="margin-right: 50px">Recent Dishes</p>
-        <a asp-controller="Home" asp-action="RegisterPage" style="margin-right: 30px">Register</a>
+        <div style="display: flex; flex-direction: row; justify-content: center; color: green">
+        <a asp-controller="Home" asp-action="RegisterPage">Register</a>
         <a asp-controller="Home" asp-action="LoginPage">Login</a>
+        </div>
         <hr />
     </div>
 
