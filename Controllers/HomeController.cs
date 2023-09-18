@@ -59,7 +59,7 @@ public class HomeController : Controller
 
 
 
-    [HttpPost]
+    //[HttpPost]
     public IActionResult Register(User user)
     {
         Debug.WriteLine("Register Method");
@@ -112,7 +112,7 @@ public class HomeController : Controller
 
     }
 
-    [HttpPost]
+    //[HttpPost]
     public IActionResult Login(LoginUser userSubmission)
     {
         if (ModelState.IsValid)
