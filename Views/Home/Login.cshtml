@@ -7,7 +7,7 @@
         <a asp-controller="Home" asp-action="Index">Home</a>
     </div>
     <a asp-controller="Home" asp-action="Index">Home</a>
-    <form asp-action="Login" asp-controller="Home" method="post">
+    <form asp-action="Login" asp-controller="Home">
         <span asp-validation-for="Email"></span>
         <label asp-for="Email">Email</label>
         <input asp-for="Email" type="text" />
