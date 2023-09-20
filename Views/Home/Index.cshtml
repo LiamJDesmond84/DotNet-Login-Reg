@@ -1,5 +1,6 @@
 ﻿@model User
 
+
 <div class="text-center">
 
     <div style="display: flex; flex-direction: column; justify-content: center; color: green">
@@ -18,6 +19,12 @@
 
         <a style="margin: auto" asp-action="Logout" asp-controller="Home"><button>Logout</button></a>
 
+        @foreach (var x in Model)
+        {
+            <hr style="width: 300px; margin: auto" />
+            <li><a asp-controller="Home" asp-action="ViewDish" asp-route-id="@x.Id">@x.Name</a> by @x.Chef</li>
+            <li><a asp-controller="Home" asp-action="EditDish" asp-route-id="@x.Id">Edit</a></li>
+        }
     }
     else
     {

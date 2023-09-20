@@ -30,7 +30,9 @@ public class HomeController : Controller
             Debug.WriteLine("NULL");
             List<User> users = _context.Users.ToList();
 
-            return View("Index", users);
+            ViewData["Users"] = users;
+
+            return View("Index");
         }
         else
         {
