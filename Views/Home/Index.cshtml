@@ -19,16 +19,18 @@
 
         <a style="margin: auto" asp-action="Logout" asp-controller="Home"><button>Logout</button></a>
 
-        @foreach (var x in (List<User>)ViewData["Users"])
-        {
 
-            <p>@x.FirstName</p>
-
-        }
     }
     else
     {
         <p>Hello, Please Register or Sign In</p>
+    }
+
+    @foreach (var x in (List<User>)ViewData["Users"])
+    {
+
+        <p>@x.FirstName</p>
+
     }
 
 </div>
