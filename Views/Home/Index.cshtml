@@ -19,11 +19,11 @@
 
         <a style="margin: auto" asp-action="Logout" asp-controller="Home"><button>Logout</button></a>
 
-        @foreach (var x in Model)
+        @foreach (var x in (List<User>)ViewData["Users"])
         {
-            <hr style="width: 300px; margin: auto" />
-            <li><a asp-controller="Home" asp-action="ViewDish" asp-route-id="@x.Id">@x.Name</a> by @x.Chef</li>
-            <li><a asp-controller="Home" asp-action="EditDish" asp-route-id="@x.Id">Edit</a></li>
+
+            <p>@x.FirstName</p>
+
         }
     }
     else
