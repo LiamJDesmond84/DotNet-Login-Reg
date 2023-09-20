@@ -7,8 +7,8 @@
         <a asp-controller="Home" asp-action="Index">Home</a>
     </div>
 
-    <div style="display: flex; flex-direction: column; justify-content: center;">
-    <form asp-action="Register" asp-controller="Home" style="width: 300px">
+
+    <form asp-action="Register" asp-controller="Home" style="display: flex; flex-direction: column; justify-content: center; width: 300px; margin: auto">
         <span asp-validation-for="FirstName"></span>
         <label asp-for="FirstName">First Name</label>
         <input asp-for="FirstName" type="text" />
@@ -32,5 +32,4 @@
 
         <button type="submit">Register</button>
     </form>
-        div
 </div>
