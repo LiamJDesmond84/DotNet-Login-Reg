@@ -6,8 +6,8 @@
         <p style="margin-right: 50px">Login</p>
         <a asp-controller="Home" asp-action="Index">Home</a>
     </div>
-    <a asp-controller="Home" asp-action="Index">Home</a>
-    <form asp-action="Login" asp-controller="Home">
+
+    <form asp-action="Login" asp-controller="Home" style="display: flex; flex-direction: column; justify-content: center; width: 300px; margin: auto">
         <span asp-validation-for="Email"></span>
         <label asp-for="Email">Email</label>
         <input asp-for="Email" type="text" />
