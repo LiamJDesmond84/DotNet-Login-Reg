@@ -28,9 +28,9 @@ public class HomeController : Controller
         if (HttpContext.Session.GetObjectFromJson<User>("SessionUser") == null)
         {
             Debug.WriteLine("NULL");
-            List<User> dishes = _context.Users.ToList();
+            List<User> users = _context.Users.ToList();
 
-            return View("Index");
+            return View("Index", users);
         }
         else
         {
